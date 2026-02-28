@@ -67,10 +67,12 @@ return {
 
   {
     "folke/trouble.nvim",
-    opts = {},
+    opts = {
+      focus = true,
+    },
     cmd = "Trouble",
     keys = {
-      { "<leader>dd", "<cmd>Trouble diagnostics toggle<cr>", desc = "Diagnostics", icon = "󱖫" },
+      { "<leader>d", "<cmd>Trouble diagnostics toggle<cr>", desc = "Diagnostics" },
     },
   },
 
@@ -97,7 +99,6 @@ return {
         { "<leader>f", group = "Find", icon = "󰈞" },
         { "<leader>t", group = "Themes", icon = "󱊖" },
         { "<leader>w", group = "Workspace", icon = "󰖯" },
-        { "<leader>d", group = "Diagnostics", icon = "󱖫" },
 
         -- Direct Action Icons
         { "<leader>c", icon = "" },
@@ -107,9 +108,9 @@ return {
         { "<leader>x", icon = "󰅖" },
         { "<leader>e", icon = "󰙅" },
         { "<leader>/", icon = "󰅺" },
+        { "<leader>d", icon = "󱖫" },
 
         -- Force-hide the old groups
-        { "<leader>d", hidden = true },
         { "<leader>ma", hidden = true },
       }
     end,
