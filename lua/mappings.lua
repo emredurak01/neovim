@@ -8,15 +8,7 @@ map("n", ";", ":", { desc = "CMD enter command mode" })
 map("n", "q", "<Nop>", { desc = "Disable macro recording" })
 map({ "n", "v", "o" }, "E", "$", { desc = "Go to end of line" })
 map({ "n", "v", "o" }, "B", "^", { desc = "Go to start of line" })
--- Delete without yanking
-map({ "n", "v" }, "d", '"_d', { desc = "Delete" })
-map({ "n", "v" }, "D", '"_D', { desc = "Delete to end of line" })
-map({ "n", "v" }, "x", '"_x', { desc = "Delete character" })
-map({ "n", "v" }, "X", '"_X', { desc = "Delete character before cursor" })
-map({ "n", "v" }, "c", '"_c', { desc = "Change text" })
-map({ "n", "v" }, "C", '"_C', { desc = "Change to end of line" })
--- Yank but keep the selection
-map("v", "y", "ygv", { desc = "Yank" })
+map("n", "<C-a>", "ggVG", { desc = "Select all" })
 ----
 
 -- Whichkey mappings
