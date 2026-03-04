@@ -55,6 +55,7 @@ map("n", "<leader>gs", git_repo_snacks "git_status", { desc = "Git status" })
 map("n", "<leader>gb", git_repo_snacks "git_branches", { desc = "Git branch" })
 map("n", "<leader>gf", git_repo_snacks "git_files", { desc = "Git files" })
 map("n", "<leader>ga", git_repo_snacks "git_stash", { desc = "Git stash" })
+map("n", "<leader>gh", "<cmd> Gitsigns preview_hunk_inline <CR>", { desc = "Git hunk" })
 
 -- Formatting
 map("n", "<leader>m", function()
