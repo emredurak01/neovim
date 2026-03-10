@@ -96,6 +96,18 @@ map({ "n", "t" }, "<A-f>", function()
   require("floaterm").toggle()
 end, { desc = "Toggle Floaterm" })
 
+-- Switch to visual mode in terminal with <vv>
+vim.api.nvim_create_autocmd("TermOpen", {
+  callback = function(args)
+    vim.schedule(function()
+      if vim.api.nvim_buf_is_valid(args.buf) then
+        vim.keymap.set("t", "vv", [[<C-\><C-n>]], { buffer = args.buf })
+        vim.keymap.set("n", "<Esc>", "i", { buffer = args.buf })
+      end
+    end)
+  end,
+})
+
 -- Remove NvChad defaults
 pcall(nomap, "n", "<leader>h") -- Horizontal term
 pcall(nomap, "n", "<leader>v") -- Vertical term
